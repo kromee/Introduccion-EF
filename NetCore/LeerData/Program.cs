@@ -45,27 +45,38 @@ namespace LeerData
                  }*/
 
 
-              //Insertar nuevo autor
+                //Insertar nuevo autor
+                /*
+                      var nuevoAutor1 = new Autor
+                      {
+                          Nombre = "Juan",
+                          Apellidos = "Robles",
+                          Grado = "Junior"
+                      };
+                      db.Add(nuevoAutor1);
 
-                    var nuevoAutor1 = new Autor
-                    {
-                        Nombre = "Juan",
-                        Apellidos = "Robles",
-                        Grado = "Junior"
-                    };
-                    db.Add(nuevoAutor1);
+                      var nuevoAutor2 = new Autor
+                      {
+                          Nombre = "Juana",
+                          Apellidos = "Lima",
+                          Grado = "Master"
+                      };
+                      db.Add(nuevoAutor2);
 
-                    var nuevoAutor2 = new Autor
-                    {
-                        Nombre = "Juana",
-                        Apellidos = "Lima",
-                        Grado = "Master"
-                    };
-                    db.Add(nuevoAutor2);
+                      var estadoTransaccion = db.SaveChanges();
+                      Console.WriteLine("Estado de transaccion ===> " + estadoTransaccion);
+                */
 
+                //Actualizar datos del autor
+                var autor = db.Autor?.Single(x => x.Nombre == "Juan");
+                if (autor != null)
+                {
+                    autor.Apellidos = "Lopez";
+                    autor.Grado = "Programador";
                     var estadoTransaccion = db.SaveChanges();
-                    Console.WriteLine("Estado de transaccion ===> " + estadoTransaccion);
-                
+                    Console.WriteLine("Estado de transaccion ==> " + estadoTransaccion);
+                }
+
 
             }
 
