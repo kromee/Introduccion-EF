@@ -14,6 +14,6 @@ namespace LeerData
 
         public Precios? PrecioPromocion {get;set;}
         public ICollection<Comentario>? ComentarioLista {get;set;}
-        /*public ICollection<LibroAutor> AutorLink {get;set;}*/
+        public ICollection<LibroAutor>? AutorLink {get;set;}
     }
 }

@@ -20,13 +20,13 @@ namespace LeerData
         .HasForeignKey<Precios>(p => p.LibroId); // PrecioPromocion contiene la clave foránea
 
 
-            //modelBuilder.Entity<LibroAutor>().HasKey(xi => new {xi.AutorId, xi.LibroId});
+            modelBuilder.Entity<LibroAutor>().HasKey(xi => new {xi.AutorId, xi.LibroId});
         }
 
         public DbSet<Libros>? Libros {get;set;}
         public DbSet<Precios>? Precios {get;set;}
-       /* public DbSet<Comentario> Comentario {get;set;}
-        public DbSet<Autor> Autor {get;set;}
-        public DbSet<LibroAutor> LibroAutor {get;set;}*/
+        public DbSet<Comentario>? Comentario {get;set;}
+        public DbSet<Autor>? Autor {get;set;}
+        public DbSet<LibroAutor>? LibroAutor {get;set;}
     }
 }

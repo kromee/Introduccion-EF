@@ -21,13 +21,24 @@ namespace LeerData
 
 
                 //Mostrando comentarios de los libros
-                var libros = db.Libros?.Include(x => x.ComentarioLista).AsNoTracking();
+                /* var libros = db.Libros?.Include(x => x.ComentarioLista).AsNoTracking();
+                 foreach (var libro in libros)
+                 {
+                     Console.WriteLine(libro.Titulo);
+                     foreach (var comentario in libro.ComentarioLista)
+                     {
+                         Console.WriteLine("----- " + comentario.ComentarioTexto);
+                     }
+                 }*/
+
+                var libros = db.Libros.Include(x => x.AutorLink).ThenInclude(xi => xi.Autor);
+                
                 foreach (var libro in libros)
                 {
                     Console.WriteLine(libro.Titulo);
-                    foreach (var comentario in libro.ComentarioLista)
+                    foreach (var autLink in libro.AutorLink)
                     {
-                        Console.WriteLine("----- " + comentario.ComentarioTexto);
+                        Console.WriteLine("---- " + autLink.Autor.Nombre);
                     }
                 }
 
