@@ -31,18 +31,44 @@ namespace LeerData
                      }
                  }*/
 
-                var libros = db.Libros.Include(x => x.AutorLink).ThenInclude(xi => xi.Autor);
-                
-                foreach (var libro in libros)
-                {
-                    Console.WriteLine(libro.Titulo);
-                    foreach (var autLink in libro.AutorLink)
+                // relacion de muchos a muchos
+
+                /* var libros = db.Libros.Include(x => x.AutorLink).ThenInclude(xi => xi.Autor);
+
+                 foreach (var libro in libros)
+                 {
+                     Console.WriteLine(libro.Titulo);
+                     foreach (var autLink in libro.AutorLink)
+                     {
+                         Console.WriteLine("---- " + autLink.Autor.Nombre);
+                     }
+                 }*/
+
+
+              //Insertar nuevo autor
+
+                    var nuevoAutor1 = new Autor
                     {
-                        Console.WriteLine("---- " + autLink.Autor.Nombre);
-                    }
-                }
+                        Nombre = "Juan",
+                        Apellidos = "Robles",
+                        Grado = "Junior"
+                    };
+                    db.Add(nuevoAutor1);
+
+                    var nuevoAutor2 = new Autor
+                    {
+                        Nombre = "Juana",
+                        Apellidos = "Lima",
+                        Grado = "Master"
+                    };
+                    db.Add(nuevoAutor2);
+
+                    var estadoTransaccion = db.SaveChanges();
+                    Console.WriteLine("Estado de transaccion ===> " + estadoTransaccion);
+                
 
             }
+
         }
     }
 }
