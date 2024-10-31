@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\NetCore\\LeerData\\LeerData.csproj": {}
+    "/Users/eduardodominguez/Desktop/Cursos/06-Intro-EntityFramework/Introduccion-EF/NetCore/LeerData/LeerData.csproj": {}
   },
   "projects": {
-    "C:\\NetCore\\LeerData\\LeerData.csproj": {
+    "/Users/eduardodominguez/Desktop/Cursos/06-Intro-EntityFramework/Introduccion-EF/NetCore/LeerData/LeerData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\NetCore\\LeerData\\LeerData.csproj",
+        "projectUniqueName": "/Users/eduardodominguez/Desktop/Cursos/06-Intro-EntityFramework/Introduccion-EF/NetCore/LeerData/LeerData.csproj",
         "projectName": "LeerData",
-        "projectPath": "C:\\NetCore\\LeerData\\LeerData.csproj",
-        "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
-        "outputPath": "C:\\NetCore\\LeerData\\obj\\",
+        "projectPath": "/Users/eduardodominguez/Desktop/Cursos/06-Intro-EntityFramework/Introduccion-EF/NetCore/LeerData/LeerData.csproj",
+        "packagesPath": "/Users/eduardodominguez/.nuget/packages/",
+        "outputPath": "/Users/eduardodominguez/Desktop/Cursos/06-Intro-EntityFramework/Introduccion-EF/NetCore/LeerData/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/eduardodominguez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,16 +58,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.30, 6.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.30, 6.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.30, 6.0.30]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100-preview.5.24307.3/RuntimeIdentifierGraph.json"
         }
       }
     }

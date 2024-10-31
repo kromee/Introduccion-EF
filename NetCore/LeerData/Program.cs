@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace LeerData
 {
@@ -7,6 +9,29 @@ namespace LeerData
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenido al curso EF Core 6");
+
+            using (var db = new AppVentaLibrosContext())
+            {
+                //uso del AsNoTracking
+                /* var libros = db.Libros?.Include(x => x.PrecioPromocion).AsNoTracking();
+                 foreach (var libro in libros)
+                 {
+                     Console.WriteLine(libro.Titulo + " --- " + libro.PrecioPromocion?.PrecioActual);
+                 }*/
+
+
+                //Mostrando comentarios de los libros
+                var libros = db.Libros?.Include(x => x.ComentarioLista).AsNoTracking();
+                foreach (var libro in libros)
+                {
+                    Console.WriteLine(libro.Titulo);
+                    foreach (var comentario in libro.ComentarioLista)
+                    {
+                        Console.WriteLine("----- " + comentario.ComentarioTexto);
+                    }
+                }
+
+            }
         }
     }
 }
