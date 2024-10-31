@@ -68,16 +68,22 @@ namespace LeerData
                 */
 
                 //Actualizar datos del autor
-                var autor = db.Autor?.Single(x => x.Nombre == "Juan");
+                /*var autor = db.Autor?.Single(x => x.Nombre == "Juan");
                 if (autor != null)
                 {
                     autor.Apellidos = "Lopez";
                     autor.Grado = "Programador";
                     var estadoTransaccion = db.SaveChanges();
                     Console.WriteLine("Estado de transaccion ==> " + estadoTransaccion);
+                }*/
+
+                //eliminar autor
+                var autor = db.Autor?.Single(x => x.AutorId == 1);
+                if (autor != null) {
+                    db.Remove(autor);
+                    var estadoTransaccion = db.SaveChanges();
+                    Console.WriteLine("Estado de transaccion ==> " + estadoTransaccion);
                 }
-
-
             }
 
         }
